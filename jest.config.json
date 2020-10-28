@@ -1,0 +1,8 @@
+{
+        "moduleFileExtensions": ["js", "json"],
+        "rootDir": "./src",
+        "coverageDirectory": "../coverage",
+        "testEnvironment": "node",
+        "testRegex": ".spec.js$",
+        "globalSetup": "<rootDir>/common/test/setEnvVar.js"
+}
