@@ -11,9 +11,9 @@ module.exports = function () {
                 (error, result) => {
                         const dbInfo = mongodbURI.parse(process.env.DB_URL);
                         console.log(
-                                `Connect to notespicker on host ${dbInfo.hosts[0].host}`
+                                `Connect to database on host ${dbInfo.hosts[0].host}`
                         );
-                        _db = result.db("notespicker");
+                        _db = result.db(process.env.DB_NAME);
                 }
         );
 };
@@ -21,7 +21,7 @@ module.exports = function () {
 //get db for controller
 module.exports.getDB = () => {
         if (!_db) {
-                console.log("You have to initialized DB");
+                console.error("You have to initialized DB");
                 return;
         }
 
